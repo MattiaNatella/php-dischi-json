@@ -1,29 +1,32 @@
 <?php
 
+if ($_POST['titolo'] && $_POST['artista'] && $_POST['genere'] && $_POST['annoPubblicazione'] && $_POST['urlCover']) {
+    //leggo il file dei dischi e li salvo in una variabile
+    $json_text = file_get_contents('./dischi.json');
 
-//leggo il file dei dischi e li salvo in una variabile
-$json_text = file_get_contents('./dischi.json');
 
+    //converto la stringa json in struttura dati PHP
 
-//converto la stringa json in struttura dati PHP
+    $discs = json_decode($json_text, true);
 
-$discs = json_decode($json_text, true);
-
-//modifico la struttura dei dati
+    //modifico la struttura dei dati
 //inserisco quindi un nuovo disco
-$discs[] = $_POST;
+    $discs[] = $_POST;
 
-// var_dump($discs);
+    // var_dump($discs);
 
-// riconverto la struttura dati php in stringa JSON
-$json_text_updated = json_encode($discs);
+    // riconverto la struttura dati php in stringa JSON
+    $json_text_updated = json_encode($discs);
 
-// sovrascrivo il contenuto del file .json
+    // sovrascrivo il contenuto del file .json
 
-file_put_contents('./dischi.json', $json_text_updated);
+    file_put_contents('./dischi.json', $json_text_updated);
 
-//redirect alla pagina index con la lista aggiornata
+    //redirect alla pagina index con la lista aggiornata
 
-header('Location: ./index.php')
-
-    ?>
+    header('Location: ./index.php');
+} else {
+    //se non sono stati inviati tutti i dati, reindirizzo alla home
+    header('Location: ./index.php');
+}
+?>

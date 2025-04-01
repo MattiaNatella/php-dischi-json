@@ -27,11 +27,12 @@ $discs = json_decode($discsString, true);
     <h1>Inserisci un nuovo disco</h1>
     <br>
     <form action="./server.php" method="post">
-        <input type="text" name="titolo" id="titolo"><label for="titolo">Titolo</label>
-        <input type="text" name="artista" id="artista"><label for="artista">Artista</label>
+        <input type="text" name="titolo" id="titolo"><label for="titolo" required>Titolo</label>
+        <input type="text" name="artista" id="artista"><label for="artista" required>Artista</label>
         <input type="text" name="genere" id="genere"><label for="genere">Genere</label>
-        <input type="text" name="urlCover" id="urlCover"><label for="urlCover">Copertina</label>
-        <input type="date" name="annoPubblicazione" id="annoPubblicazione"><label for="annoPubblicazione">Anno di
+        <input type="text" name="urlCover" id="urlCover" required><label for="urlCover">Copertina</label>
+        <input type="date" name="annoPubblicazione" id="annoPubblicazione" required><label for="annoPubblicazione">Anno
+            di
             Pubblicazione</label>
         <button type="submit">Inserisci Disco</button>
     </form>
