@@ -1,5 +1,7 @@
 <?php
 
+
+
 $discsString = file_get_contents('./dischi.json');
 $discs = json_decode($discsString, true);
 
@@ -10,6 +12,7 @@ $discs = json_decode($discsString, true);
 <html lang="en">
 
 <head>
+    <script src=""></script>
     <!-- bootstrap -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css'
         integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=='
@@ -34,27 +37,25 @@ $discs = json_decode($discsString, true);
     </form>
     <br>
     <hr>
-
-    <?php
-    foreach ($discs as $disc) {
-        ?>
-
-        <div class="card" style="width: 18rem;">
-            <img src="<?php echo $disc['urlCover'] ?>" class="card-img-top" alt="<?php echo $disc['urlCover'] ?>">
-            <div class="card-body">
-                <h5 class="card-title"><?php echo $disc['titolo'] ?></h5>
-                <p class="card-text"><?php echo $disc['artista'] ?></p>
-                <p class="card-text"><?php echo $disc['annoPubblicazione'] ?></p>
-                <p class="card-text"><?php echo $disc['genere'] ?></p>
-            </div>
-        </div>
-        <br>
-        <hr>
-
+    <div class="container d-flex justify-content-between">
         <?php
-    }
-    ?>
+        foreach ($discs as $disc) {
+            ?>
 
+            <div class="card">
+                <img src="<?php echo $disc['urlCover'] ?>" class="card-img-top" alt="<?php echo $disc['urlCover'] ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $disc['titolo'] ?></h5>
+                    <p class="card-text"><?php echo $disc['artista'] ?></p>
+                    <p class="card-text"><?php echo $disc['annoPubblicazione'] ?></p>
+                    <p class="card-text"><?php echo $disc['genere'] ?></p>
+                </div>
+            </div>
+
+            <?php
+        }
+        ?>
+    </div>
 </body>
 
 </html>

@@ -1,1 +1,23 @@
-[{"titolo":"The Dark Side of the Moon","artista":"Pink Floyd","urlCover":"https:\/\/example.com\/dark-side.jpg","annoPubblicazione":1973,"genere":"Progressive Rock"},{"titolo":"Thriller","artista":"Michael Jackson","urlCover":"https:\/\/example.com\/thriller.jpg","annoPubblicazione":1982,"genere":"Pop"},{"titolo":"Back in Black","artista":"AC\/DC","urlCover":"https:\/\/example.com\/back-in-black.jpg","annoPubblicazione":1980,"genere":"Hard Rock"},{"titolo":"Titolo","artista":"Artista","genere":"Genere","urlCover":"Copertina","annoPubblicazione":"2025-04-15"}]
+[
+    {
+        "titolo": "The Dark Side of the Moon",
+        "artista": "Pink Floyd",
+        "urlCover": "https:\/\/example.com\/dark-side.jpg",
+        "annoPubblicazione": 1973,
+        "genere": "Progressive Rock"
+    },
+    {
+        "titolo": "Thriller",
+        "artista": "Michael Jackson",
+        "urlCover": "https:\/\/example.com\/thriller.jpg",
+        "annoPubblicazione": 1982,
+        "genere": "Pop"
+    },
+    {
+        "titolo": "Back in Black",
+        "artista": "AC\/DC",
+        "urlCover": "https:\/\/example.com\/back-in-black.jpg",
+        "annoPubblicazione": 1980,
+        "genere": "Hard Rock"
+    }
+]
